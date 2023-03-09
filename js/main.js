@@ -60,14 +60,12 @@ buttonNextDom.addEventListener('click', function () {
 
     if (start < imageList.length - 1) {
         callImg[start].classList.remove("show");
-       
         start++;
         callImg[start].classList.add("show");
         
     }
     else {
         callImg[start].classList.remove("show");
- 
         start = 0;
         callImg[start].classList.add("show");
       
@@ -79,14 +77,12 @@ buttonPrevDom.addEventListener('click', function () {
 
     if (start > 0) {
         callImg[start].classList.remove("show");
-     
         start--;
         callImg[start].classList.add("show");
  
     }
     else {
         callImg[start].classList.remove("show");
-    
         start = imageList.length - 1;
         callImg[start].classList.add("show");
 
@@ -95,7 +91,6 @@ buttonPrevDom.addEventListener('click', function () {
 })
 
 
-// creo array per sideimg
 
 
 
