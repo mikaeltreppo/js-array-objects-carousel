@@ -32,11 +32,15 @@ let imgSpaceDom = document.querySelector(".imgSpace");
 const sideDom = document.querySelector(".side");
 let slider = "";
 // creo un creatore di img su js
+
 for (let i = 0; i < imageList.length ; i++) {
     let sliderDone = `
     <div class="image" >
     <img class='imgInDiv' src=${imageList[i].image} alt="img">
-    </div>
+    <div class="abs"
+    <h2>${imageList[i].title} </h2>
+    <p>${imageList[i].text}<p/>
+    </div></div>
     `;
     slider += sliderDone;
 }
@@ -89,8 +93,6 @@ buttonPrevDom.addEventListener('click', function () {
     }
 
 })
-
-
 
 
 
