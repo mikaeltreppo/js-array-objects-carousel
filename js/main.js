@@ -21,8 +21,10 @@ const imageList = [
         title: "Marvel's Avengers",
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
-];
+
+]
 console.log(imageList)
+
 // entro in html su imgSpace e button
 let buttonNextDom = document.getElementById("next")
 let buttonPrevDom = document.getElementById("prev")
@@ -30,39 +32,45 @@ let imgSpaceDom = document.querySelector(".imgSpace");
 const sideDom = document.querySelector(".side");
 let slider = "";
 // creo un creatore di img su js
-
-imageList.forEach(imageObj => {
-    const { image, title, text } = imageObj; // destrutturo l'oggetto
-    const imgElement = document.createElement("div");// creo un elemento div
-        imgSpaceDom.innerHTML = `
-      <img class="image" src="${image}" alt="${title}">
-      <h2>${title}</h2>
-      <p>${text}</p>
+for (let i = 0; i < imageList.length ; i++) {
+    let sliderDone = `
+    <div class="image" >
+    <img class='imgInDiv' src=${imageList[i].image} alt="img">
+    </div>
     `;
-    imgSpaceDom.appendChild(imgElement); // aggiungo l'elemento al DOM
-});
+    slider += sliderDone;
+}
+
+
+
+//sidebar creatore img
+
+
+// stampo le img su html
+imgSpaceDom.innerHTML = slider;
+//creo array di classe e creo variabile con numeraione per incrementare in for
+const callImg = document.getElementsByClassName("image");
+
 
 
 let start = 0;
 
-const callImg = document.getElementsByClassName("image");
-
-
+callImg[start].classList.add("show");
 buttonNextDom.addEventListener('click', function () {
 
     if (start < imageList.length - 1) {
         callImg[start].classList.remove("show");
-
+       
         start++;
         callImg[start].classList.add("show");
-
+        
     }
     else {
         callImg[start].classList.remove("show");
-
+ 
         start = 0;
         callImg[start].classList.add("show");
-
+      
     }
 
 })
@@ -71,20 +79,23 @@ buttonPrevDom.addEventListener('click', function () {
 
     if (start > 0) {
         callImg[start].classList.remove("show");
-
+     
         start--;
         callImg[start].classList.add("show");
-
+ 
     }
     else {
         callImg[start].classList.remove("show");
-
+    
         start = imageList.length - 1;
         callImg[start].classList.add("show");
 
     }
 
 })
+
+
+// creo array per sideimg
 
 
 
