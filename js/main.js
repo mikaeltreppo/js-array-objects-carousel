@@ -33,7 +33,7 @@ const sideDom = document.querySelector(".side");
 let slider = "";
 // creo un creatore di img su js
 
-for (let i = 0; i < imageList.length ; i++) {
+for (let i = 0; i < imageList.length; i++) {
     let sliderDone = `
     <div class="image" >
     <img class='imgInDiv' src=${imageList[i].image} alt="img">
@@ -66,13 +66,13 @@ buttonNextDom.addEventListener('click', function () {
         callImg[start].classList.remove("show");
         start++;
         callImg[start].classList.add("show");
-        
+
     }
     else {
         callImg[start].classList.remove("show");
         start = 0;
         callImg[start].classList.add("show");
-      
+
     }
 
 })
@@ -83,7 +83,7 @@ buttonPrevDom.addEventListener('click', function () {
         callImg[start].classList.remove("show");
         start--;
         callImg[start].classList.add("show");
- 
+
     }
     else {
         callImg[start].classList.remove("show");
@@ -98,3 +98,23 @@ buttonPrevDom.addEventListener('click', function () {
 
 
 
+let clock = setInterval(function ()
+ {
+
+
+        if (start < imageList.length - 1) {
+            callImg[start].classList.remove("show");
+            start++;
+            callImg[start].classList.add("show");
+
+        }
+        else {
+            callImg[start].classList.remove("show");
+            start = 0;
+            callImg[start].classList.add("show");
+
+        }
+
+    
+ }
+    , 1000) 
